@@ -50,12 +50,11 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /etc/timezone:/etc/timezone:ro
+      - mongo-data:/data/db
     environment:
       - TZ=${TZ}
       - MONGO_ROOT_USERNAME=${MONGO_ROOT_USERNAME}
       - MONGO_ROOT_PASSWORD=${MONGO_ROOT_PASSWORD}
-    volumes:
-      - mongo-data:/data/db
     networks:
       - backnet
 
