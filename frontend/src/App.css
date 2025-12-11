@@ -1,0 +1,438 @@
+html {
+    line-height: 1.15;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+article,
+aside,
+footer,
+header,
+nav,
+section {
+    display: block;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+figcaption,
+figure,
+main {
+    display: block;
+}
+
+figure {
+    margin: 1em 40px;
+}
+
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+}
+
+pre {
+    font-family: monospace, monospace;
+    font-size: 1em;
+}
+
+a {
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+
+abbr[title] {
+    border-bottom: none;
+    text-decoration: underline;
+    text-decoration: underline dotted;
+}
+
+b,
+strong {
+    font-weight: inherit;
+}
+
+b,
+strong {
+    font-weight: bolder;
+}
+
+code,
+kbd,
+samp {
+    font-family: monospace, monospace;
+    font-size: 1em;
+}
+
+dfn {
+    font-style: italic;
+}
+
+mark {
+    background-color: #ff0;
+    color: #000;
+}
+
+small {
+    font-size: 80%;
+}
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+sup {
+    top: -0.5em;
+}
+
+audio,
+video {
+    display: inline-block;
+}
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+img {
+    border-style: none;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: sans-serif;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+}
+
+button,
+input {
+    overflow: visible;
+}
+
+button,
+select {
+    text-transform: none;
+}
+
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+    -webkit-appearance: button;
+}
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+}
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+    outline: 1px dotted ButtonText;
+}
+
+fieldset {
+    padding: 0.35em 0.75em 0.625em;
+}
+
+legend {
+    box-sizing: border-box;
+    color: inherit;
+    display: table;
+    max-width: 100%;
+    padding: 0;
+    white-space: normal;
+}
+
+progress {
+    display: inline-block;
+    vertical-align: baseline;
+}
+
+textarea {
+    overflow: auto;
+}
+
+[type="checkbox"],
+[type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+    height: auto;
+}
+
+[type="search"] {
+    -webkit-appearance: textfield;
+    outline-offset: -2px;
+}
+
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    font: inherit;
+}
+
+details,
+menu {
+    display: block;
+}
+
+summary {
+    display: list-item;
+}
+
+canvas {
+    display: inline-block;
+}
+
+template {
+    display: none;
+}
+
+[hidden] {
+    display: none;
+}
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: "";
+    clear: both;
+    height: 0;
+}
+
+html {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+li {
+    list-style: none;
+}
+
+.wrapper {
+    margin: 0 auto;
+    max-width: 1440px;
+    width: 100%;
+}
+
+.leaflet-container {
+    width: 100%;
+    height: 100vh;
+}
+
+.text-box-notes {
+    width: 100%;
+}
+
+.slider-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.slider {
+    width: 75%;
+}
+
+.textfield-container {
+    margin-top: 10px;
+}
+
+.submit-button-container {
+    display: flex;
+    justify-content: right;
+    margin-top: 10px;
+}
+
+.like-dislike-container {
+    display: flex;
+    justify-content: space-evenly;
+    /* padding-top:15px; */
+    margin: 15px 0;
+}
+
+.title-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+h2,
+h3 {
+    text-align: center;
+}
+
+.popup-sub-heading {
+    margin-top: 10px;
+    margin-bottom: 0px;
+    text-align: center;
+    width: 100%;
+}
+
+.leaflet-popup-content p {
+    margin: 0;
+}
+
+li,
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+.search-bar-container {
+    position: absolute;
+    left: calc(50% - 125px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 10001;
+}
+.search-bar-input {
+    background-color: white;
+    opacity: 95%;
+    width: 250px;
+    z-index: 10001;
+}
+
+.search-results-item {
+    background-color: white;
+    opacity: 95%;
+    padding: 10px;
+    border-bottom: 1px solid lightgrey;
+}
+.search-results-item:hover {
+    background-color: lightgrey;
+    cursor: pointer;
+}
+
+.results {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.modal {
+    background-color: grey !important;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+    filter: alpha(opacity=0);
+    z-index: 10001;
+    -webkit-transition: opacity 0.25s linear;
+    -o-transition: opacity 0.25s linear;
+    transition: opacity 0.25s linear;
+    /* background-image: url("../Transeuntium\ Favicon-04.png"); */
+}
+
+.modal-loading-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal-loading-image {
+    width: 100px;
+    height: 100px;
+    background-image: url("../public//Transeuntium\ Favicon-04.png");
+    background-size: contain;
+    -webkit-animation: spinX 3s infinite;
+    animation: spinX 3s infinite;
+}
+
+@-webkit-keyframes spinX {
+    0% {
+        -webkit-transform: rotateX(0deg);
+        -webkit-transform-origin: 0% 50% 0;
+    }
+    100% {
+        -webkit-transform: rotateX(360deg);
+        -webkit-transform-origin: 0% 50% 0;
+    }
+}
+@keyframes spinX {
+    0% {
+        transform: rotateX(0deg);
+        transform-origin: 0% 50% 0;
+    }
+    100% {
+        transform: rotateX(360deg);
+        transform-origin: 0% 50% 0;
+    }
+}

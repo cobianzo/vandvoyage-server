@@ -1,0 +1,59 @@
+services:
+
+  # --- Frontend ---
+  vandvoyage-nodejs-frontend:
+    build: ./frontend
+    container_name: vandvoyage-frontend
+    restart: always
+    depends_on:
+      - vandvoyage-nodejs-backend
+    networks:
+      - traefik
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.vandvoyage-web.rule=Host(`maps.vandvoyage.com`)"
+      - "traefik.http.routers.vandvoyage-web.entrypoints=websecure"
+      - "traefik.http.routers.vandvoyage-web.tls.certresolver=le"
+      - "traefik.http.services.vandvoyage-web.loadbalancer.server.port=80"
+
+  # --- Backend ---
+  vandvoyage-nodejs-backend:
+    build: ./backend
+    container_name: vandvoyage-backend
+    restart: always
+    environment:
+      - PORT=5000
+      - DATABASE_URL=mongodb://${MONGO_ROOT_USERNAME}:${MONGO_ROOT_PASSWORD}@vandvoyage-mongo:27017/${MONGO_DBNAME}?authSource=admin
+      #- DATABASE_NAME=${MONGO_DBNAME}
+      #- DATABASE_USER=${MONGO_ROOT_USERNAME}
+      #- DATABASE_PASSWORD=${MONGO_ROOT_PASSWORD}
+    networks:
+      - backnet
+      - traefik
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.vandvoyage-api.rule=Host(`api.vandvoyage.com`)"
+      - "traefik.http.routers.vandvoyage-api.entrypoints=websecure"
+      - "traefik.http.routers.vandvoyage-api.tls.certresolver=le"
+      - "traefik.http.services.vandvoyage-api.loadbalancer.server.port=5000"
+
+  # --- Database ---
+  vandvoyage-mongo:
+    image: mongo:latest
+    container_name: vandvoyage-mongo
+    restart: always
+    environment:
+      - MONGO_ROOT_USERNAME=${MONGO_ROOT_USERNAME}
+      - MONGO_ROOT_PASSWORD=${MONGO_ROOT_PASSWORD}
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - backnet
+
+networks:
+  backnet:
+  traefik:
+    external: true
+
+volumes:
+  mongo-data:
