@@ -1,0 +1,14 @@
+{
+  "name": "vandvoyage-monorepo",
+  "version": "1.5.0",
+  "private": true,
+  "scripts": {
+    "start": "npm run start:backend & npm run start:frontend",
+    "start:backend": "cd backend && npm start",
+    "start:frontend": "cd frontend && npm start",
+    "stop": "npm run stop:backend && npm run stop:frontend",
+    "stop:backend": "lsof -ti:5001 | xargs kill -9 2>/dev/null || echo 'Backend not running'",
+    "stop:frontend": "lsof -ti:3000 | xargs kill -9 2>/dev/null || echo 'Frontend not running'",
+    "install:all": "cd backend && npm install && cd ../frontend && npm install"
+  }
+}
