@@ -1,0 +1,30 @@
+# Evitar que archivos locales sobrescriban la configuración de Docker
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Node modules (se instalan en el build)
+node_modules
+
+# Build output (se genera durante el build)
+build
+
+# Git
+.git
+.gitignore
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Testing
+coverage

@@ -1,0 +1,28 @@
+# Evitar copiar archivos innecesarios al contenedor
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Node modules (se instalan en el build)
+node_modules
+
+# Git
+.git
+.gitignore
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# Testing
+coverage
