@@ -1,9 +1,5 @@
 # Evitar que archivos locales sobrescriban la configuración de Docker
-.env
-.env.local
-.env.development
-.env.test
-.env.production
+.env*
 
 # Node modules (se instalan en el build)
 node_modules
