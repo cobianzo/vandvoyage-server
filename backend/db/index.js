@@ -3,6 +3,17 @@ import "dotenv/config";
 
 const { DATABASE_URL, DATABASE_USER, DATABASE_PASSWORD, DATABASE_NAME } = process.env;
 
+console.log("DATABASE_URL:", DATABASE_URL);
+console.log("DATABASE_USER:", DATABASE_USER);
+console.log("DATABASE_PASSWORD:", DATABASE_PASSWORD);
+console.log("DATABASE_NAME:", DATABASE_NAME);
+
+if (!DATABASE_URL || !DATABASE_USER || !DATABASE_PASSWORD || !DATABASE_NAME) {
+    console.error("❌ Missing required environment variables for the database connection.");
+    console.error("Please ensure DATABASE_URL, DATABASE_USER, DATABASE_PASSWORD, and DATABASE_NAME are set in your .env file.");
+    process.exit(1);
+}
+
 // Detectar si es MongoDB local (Docker) o Atlas (Cloud)
 // Si DATABASE_URL incluye un puerto (ej: mongo:27017), es local
 // Si no incluye puerto (ej: cluster.mongodb.net), es Atlas

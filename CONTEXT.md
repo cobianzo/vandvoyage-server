@@ -42,7 +42,7 @@ Three-service stack orchestrated with Traefik:
    - Exposes port 80
 2. **vandvoyage-nodejs-backend** (Node.js Express API)
    - Single-stage Node 18 Alpine
-   - Exposes port 5000
+   - Exposes port 5011
    - Connects to MongoDB service
 3. **vandvoyage-mongo** (MongoDB latest)
    - Data persisted in `./mongo_data/`
@@ -70,7 +70,7 @@ DATABASE_URL=<atlas-cluster-url>  # Without mongodb+srv:// prefix
 DATABASE_USER=<username>
 DATABASE_PASSWORD=<password>
 DATABASE_NAME=<dbname>
-PORT=5000
+PORT=5001
 ```
 
 Copy `.env.dist` to `.env` and configure for your deployment.
