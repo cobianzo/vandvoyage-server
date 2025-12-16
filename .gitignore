@@ -21,3 +21,4 @@ yarn-error.log*
 /frontend/node_modules
 /backend/node_modules
 mongo_data
+TRAEFIK-ISSUE-LLM.md
