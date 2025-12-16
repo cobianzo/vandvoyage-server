@@ -38,8 +38,7 @@ export const setLive = async (trains, operator) => {
 };
 
 export const getVia = async () => {
-	try {
-		const res = await axios.get(VIARAIL_URL);
+	axios.get(VIARAIL_URL).then((res) => {
 		var trains = [];
 
 		Object.keys(res.data).forEach(function(key,index) {
@@ -61,15 +60,11 @@ export const getVia = async () => {
 		});
 
 		setLive(trains, "via");
-		console.log(`✅ VIA Rail live data updated: ${trains.length} trains`);
-	} catch (error) {
-		console.error("❌ Failed to fetch VIA Rail live data:", error.message);
-	}
+	});
 };
 
 export const getGo = async () => {
-	try {
-		var trains = [];
+	var trains = [];
 
 	await axios.get(GO_BARRIE_URL).then((res) => {
 		parseString(res.data, function (err, result) {
@@ -247,16 +242,11 @@ export const getGo = async () => {
 
 	});
 
-		setLive(trains, "go");
-		console.log(`✅ GO Transit live data updated: ${trains.length} trains`);
-	} catch (error) {
-		console.error("❌ Failed to fetch GO Transit live data:", error.message);
-	}
+	setLive(trains, "go");
 };
 
 export const getAmtrak = async () => {
-	try {
-		const res = await axios.get(AMTRAK_URL);
+	axios.get(AMTRAK_URL).then((res) => {
 
 		var trains = [];
 
@@ -279,14 +269,9 @@ export const getAmtrak = async () => {
 		});
 
 		setLive(trains, "amtrak");
-		console.log(`✅ Amtrak live data updated: ${trains.length} trains`);
-	} catch (error) {
-		console.error("❌ Failed to fetch Amtrak live data:", error.message);
-	}
+	});
 };
 
-// Auto-fetch live data on server start and every 60 seconds
-// Now with error handling - won't crash server if APIs are unavailable
 getGo();
 setInterval(() => {
 	getGo();

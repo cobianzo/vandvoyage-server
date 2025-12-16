@@ -1,19 +1,25 @@
 {
-  "name": "vandvoyage-monorepo",
-  "version": "1.5.0",
-  "private": true,
-  "scripts": {
-    "start": "npm run start:backend & npm run start:frontend",
-    "start:backend": "cd backend && npm start",
-    "start:frontend": "cd frontend && npm start",
-    "stop": "npm run stop:backend && npm run stop:frontend",
-    "stop:backend": "lsof -ti:5001 | xargs kill -9 2>/dev/null || echo 'Backend not running'",
-    "stop:frontend": "lsof -ti:3000 | xargs kill -9 2>/dev/null || echo 'Frontend not running (tried port 3000)'",
-    "install:all": "cd backend && npm install && cd ../frontend && npm install",
-    "docker:up": "docker-compose -f docker-compose.local.yml up -d",
-    "docker:down": "docker-compose -f docker-compose.local.yml down",
-    "docker:logs": "docker-compose -f docker-compose.local.yml logs -f",
-    "docker:rebuild": "docker-compose -f docker-compose.local.yml up -d --build",
-    "docker:clean": "docker-compose -f docker-compose.local.yml down -v && rm -rf mongo_data"
-  }
+    "name": "travel",
+    "version": "1.0.0",
+    "description": "application for travel hub",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "npm install && node index.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "axios": "^1.4.0",
+        "cors": "^2.8.5",
+        "dotenv": "^14.3.2",
+        "express": "^4.17.2",
+        "mongoose": "^6.1.7",
+        "protobufjs": "^7.2.3",
+        "xml2js": "^0.6.0"
+    },
+    "engines": {
+        "node": "14.15.1"
+    }
 }

@@ -1,4 +1,3 @@
-import "dotenv/config"; // MUST be first to load environment variables
 import express from "express";
 import cors from "cors";
 import {
@@ -23,9 +22,9 @@ import {
 } from "./router/index.js";
 import "mongoose";
 import "./db/index.js";
+import "dotenv/config";
 
-const port = process.env.PORT || 5001;
-const host = process.env.HOST || 'localhost';
+const port = process.env.PORT || 5000;
 const app = express();
 
 app.use(express.json());
@@ -56,5 +55,4 @@ app.use("/waterlooionstagetwo", waterlooIonStageTwoRouter);
 
 app.listen(port, () => {
     console.log(`Backend running on port ${port}`);
-    console.log(`You can visit the backend at: http://${host}:${port} . ie `);
 });
